@@ -171,6 +171,13 @@ RF.fit(X_train, Y_train)
 RF = RandomForestRegressor(n_estimators=58, max_depth=27, max_features=6, min_samples_split=3, min_samples_leaf=1)
 RF.fit(X_train, Y_train)
 ```
+#### Compare Models:
+| Methods                | MAE   | RMAE  | R²    |
+|------------------------|-------|-------|-------|
+| 随机森林               |       |       |   0.9748   |
+| 随机森林不调参         |       |       |   0.9733    |
+| 线性回归               |       |       |    0.0858   |
+| KNN回归                |       |       |   0.7276    |
 
 
 
