@@ -166,18 +166,24 @@ RF.fit(X_train, Y_train)
 ![splits](https://github.com/Pradnya1208/Walmart-store-sales-prediction/blob/main/output/splits.PNG?raw=true)
 
 
+#### Models Comparison:
+| Models                                                    |    MAE     |   RMAE   |   R²    |
+|----------------------------------------------------------|------------|----------|---------|
+| Random Forest model                                       | 1383.9295  | 0.0867   | 0.9748  |
+| Random forest model (without parameter adjustment)       | 1382.3086  | 0.0865   | 0.9733  |
+| Linear Regression Model                                   | 14576.0609 | 0.9126   | 0.0858  |
+| KNN                                                      | 6355.6713  | 0.3979   | 0.7276  |
+
+Comparing various models through this table, we can draw the following conclusions:
+The Random Forest model performed the best, with both MAE (Mean Absolute Error) and R² (Coefficient of Determination) better than the other models. The random forest model after adjusting parameters (MAE = 1383.9295, R² = 0.9748) is better than the model without adjustment. The linear regression model has poor performance, R² is only 0.0858, and its fitting effect is poor. The MAE (6355.6713) of the KNN model is between random forest and linear regression, with an R² of 0.7276. The performance of the KNN model is moderate, suitable for some specific scenarios but not as good as random forest. It can be seen from the comparison of random forests that appropriate parameter adjustment can significantly improve the performance of the model.
+Overall, random forest models performed best on this set of data, linear regression models performed poorly, and KNN models provided a mid-level alternative. When selecting a model, you can consider the specific application scenarios and accuracy requirements.
+
 #### Final Model: 
 ```
 RF = RandomForestRegressor(n_estimators=58, max_depth=27, max_features=6, min_samples_split=3, min_samples_leaf=1)
 RF.fit(X_train, Y_train)
 ```
-#### Compare Models:
-| Methods                | MAE   | RMAE  | R²    |
-|------------------------|-------|-------|-------|
-| 随机森林               |       |       |   0.9748   |
-| 随机森林不调参         |       |       |   0.9733    |
-| 线性回归               |       |       |    0.0858   |
-| KNN回归                |       |       |   0.7276    |
+
 
 
 
